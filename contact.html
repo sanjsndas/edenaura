@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>EdenAura - Contact Us</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<style>
+  /* Reset & base */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #f3f9f1 0%, #d7e9c3 100%);
+    color: #2f4f2f;
+    line-height: 1.7;
+    font-size: 18px;
+    overflow-x: hidden;
+  }
+  a {
+    color: #396930;
+    text-decoration: none;
+  }
+  a:hover, a:focus {
+    text-decoration: underline;
+    outline: none;
+  }
+  .material-icons {
+    vertical-align: middle;
+    font-size: 22px;
+  }
+  .container {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+  section {
+    padding: 56px 0;
+  }
+  h1, h2, h3 {
+    font-weight: 800;
+    color: #205020;
+    margin-bottom: 28px;
+    text-shadow: 1px 1px 2px rgba(160, 198, 140, 0.3);
+  }
+  h1 {
+    font-size: 3.8rem;
+    line-height: 1.1;
+  }
+  h2 {
+    font-size: 2.6rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  p {
+    color: #153715;
+    margin-bottom: 24px;
+    max-width: 900px;
+    font-weight: 600;
+  }
+  ul {
+    max-width: 720px;
+    margin-left: 36px;
+    list-style-type: disc;
+    color: #245624;
+    font-weight: 600;
+  }
+  ul li {
+    margin-bottom: 16px;
+  }
+  header {
+    background-color: #e8f2d6;
+    border-bottom: 3px solid #a3bf7d;
+    position: sticky;
+    top: 0;
+    z-index: 1600;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1250px;
+    padding: 20px 28px;
+    margin: 0 auto;
+  }
+  .logo {
+    font-weight: 900;
+    font-size: 2rem;
+    color: #2c592c;
+    letter-spacing: 1.5px;
+    user-select: none;
+    font-family: 'Poppins', sans-serif;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+  }
+  nav a {
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    letter-spacing: 0.04em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  nav a:hover,
+  nav a:focus {
+    background-color: #a3bf7d;
+    color: #f5faf1;
+    outline-offset: 3px;
+  }
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+  .nav-links a.active {
+    background-color: #629f38;
+    color: #f0f9e8;
+  }
+  .material-icons.menu-icon {
+    font-size: 36px;
+    cursor: pointer;
+    display: none;
+    color: #2c592c;
+    transition: color 0.3s ease;
+  }
+  .material-icons.menu-icon:hover,
+  .material-icons.menu-icon:focus {
+    color: #4a7c2f;
+    outline: none;
+  }
+  #mobile-menu {
+    position: fixed;
+    top: 70px;
+    right: 0;
+    width: 320px;
+    height: calc(100vh - 70px);
+    background-color: #e8f2d6;
+    box-shadow: -6px 0 24px rgba(0,0,0,0.15);
+    transform: translateX(100%);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1650;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+  #mobile-menu.show {
+    transform: translateX(0);
+  }
+  #mobile-menu a {
+    padding: 14px 32px;
+    font-weight: 700;
+    font-size: 1.3rem;
+    border-radius: 14px;
+    color: #2d6a2d;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  #mobile-menu a:hover, #mobile-menu a:focus {
+    background-color: #7bb65f;
+    color: white;
+  }
+  #mobile-menu .close-btn {
+    align-self: flex-end;
+    margin-right: 24px;
+    cursor: pointer;
+    font-size: 38px;
+    color: #3fa53f;
+  }
+  #mobile-menu .close-btn:hover,
+  #mobile-menu .close-btn:focus {
+    color: #2b5d2b;
+    outline: none;
+  }
+  .leaf-animation-container {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: visible;
+  }
+  .leaf {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    background: url('https://cdn-icons-png.flaticon.com/512/415/415031.png') no-repeat center/contain;
+    animation-name: floatUp;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    opacity: 0.75;
+  }
+  @keyframes floatUp {
+    0% {
+      transform: translateY(100vh) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-10vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+  form.contact-form {
+    background-color: #e8f2d6cc;
+    padding: 24px 32px;
+    border-radius: 24px;
+    box-shadow: 0 8px 15px rgba(34,77,23,0.2);
+    max-width: 700px;
+    margin: 32px auto 64px;
+  }
+  form.contact-form h2 {
+    margin-bottom: 24px;
+    font-size: 2rem;
+    color: #2a4a18;
+  }
+  form.contact-form label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #2e592e;
+  }
+  form.contact-form input,
+  form.contact-form textarea {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 24px;
+    border: 2px solid #a8c88e;
+    border-radius: 14px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+  }
+  form.contact-form input:focus,
+  form.contact-form textarea:focus {
+    outline: none;
+    border-color: #3d7a28;
+  }
+  form.contact-form textarea {
+    resize: vertical;
+    min-height: 140px;
+  }
+  form.contact-form button {
+    display: inline-block;
+    background-color: #4a853e;
+    color: #f9fbf5;
+    font-weight: 700;
+    font-size: 1.25rem;
+    padding: 16px 60px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 12px 35px rgba(74,133,62,0.6);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  form.contact-form button:hover,
+  form.contact-form button:focus {
+    background-color: #35581d;
+    box-shadow: 0 16px 48px rgba(53,88,29,0.8);
+    outline: none;
+  }
+  footer {
+    background-color: #205020;
+    color: #e3f0d8;
+    text-align: center;
+    padding: 32px 20px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    font-size: 1rem;
+  }
+  footer a {
+    color: #c4e1a5;
+    font-weight: 700;
+  }
+  footer a:hover,
+  footer a:focus {
+    text-decoration: underline;
+  }
+  @media (max-width: 767px) {
+    .material-icons.menu-icon {
+      display: block;
+    }
+    nav .nav-links {
+      display: none;
+    }
+    form.contact-form {
+      margin: 24px 16px 48px;
+      padding: 20px 20px;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner container">
+    <div class="logo" tabindex="0" aria-label="EdenAura logo and home link">EdenAura</div>
+    <nav aria-label="Primary navigation">
+      <div class="nav-links">
+        <a href="index.html" tabindex="0">Home</a>
+        <a href="privacy.html" tabindex="0">Privacy</a>
+        <a href="terms.html" tabindex="0">Terms & conditons</a>
+        <a href="cookies.html"tabindex="0">Cookies</a>
+        <a href="contact.html" tabindex="0"aria-current="page">Contact us</a>
+      </div>
+      <span class="material-icons menu-icon" id="menu-open" aria-label="Open menu" role="button" tabindex="0">menu</span>
+    </nav>
+  </div>
+  <nav id="mobile-menu" aria-label="Mobile menu" role="navigation" aria-hidden="true">
+    <span class="material-icons close-btn" id="menu-close" aria-label="Close menu" role="button" tabindex="0">close</span>
+     <a href="index.html" tabindex="0">Home</a>
+        <a href="privacy.html" tabindex="0">Privacy</a>
+        <a href="terms.html" tabindex="0">Terms & conditons</a>
+        <a href="cookies.html"tabindex="0">Cookies</a>
+        <a href="contact.html" tabindex="0"aria-current="page">Contact us</a>
+  </nav>
+</header>
+
+<div class="leaf-animation-container" aria-hidden="true"></div>
+
+<main class="container" aria-label="Contact Us Content">
+  <form class="contact-form" aria-labelledby="contact-form-title" action="#" method="POST" novalidate>
+    <h2 id="contact-form-title">Contact EdenAura</h2>
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" placeholder="Your full name" required aria-required="true" />
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" placeholder="Your email address" required aria-required="true" />
+    <label for="subject">Subject</label>
+    <input type="text" id="subject" name="subject" placeholder="Subject of your inquiry" required aria-required="true" />
+    <label for="message">Message</label>
+    <textarea id="message" name="message" placeholder="Please describe your inquiry or message" required aria-required="true"></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+
+  <section id="contact-content">
+    <h1 tabindex="0">Contact Us</h1>
+
+    <h2 tabindex="0">General Inquiries</h2>
+    <p>EdenAura Garden Care welcomes your questions, feedback, and business inquiries. Whether you are interested in learning more about our comprehensive gardening and tree care services, seeking expert advice, or just want to know about our company practices, our team is here to assist you. Our customer service professionals ensure that every inquiry is handled with care and thoroughness, providing clear, accurate, and timely responses. We appreciate your interest in EdenAura and invite you to reach out via phone, email, or through our website contact form. We aim to create a supportive environment where all questions are valued. Please provide detailed information when contacting us so we can assist efficiently.</p>
+    <p>Our general inquiries service lines cater to both residential and commercial clients, ensuring tailored responses to your unique needs. We also offer consultation appointments to discuss project specifics or horticultural challenges on site or virtually. Our commitment is to transparency and honesty, maintaining open communication throughout your journey with us.</p>
+    <p>Feel free to ask about seasonal promotions, maintenance schedules, landscape design possibilities, or any other areas of interest related to your garden or property. We handle all communications confidentially and strive to exceed your expectations. Connecting with EdenAura means joining a community that values quality care, environmental sustainability, and customer satisfaction above all.</p>
+    <p>Our staff is extensively trained in both customer service and horticultural knowledge, making them your first point of friendly, professional contact. We invite all prospective and current clients to use this service as their gateway to the many benefits EdenAura offers. Regular updates and news can also be received through newsletter subscriptions available on our site, ensuring you stay informed about upcoming events and services.</p>
+    <p>By choosing to contact us, you gain access to a knowledgeable team ready to help you realize the full potential of your outdoor spaces. We encourage you to reach out early and often for the most comprehensive support and guidance. Thank you for considering EdenAura as your trusted partner in garden and tree care.</p>
+
+    <h2 tabindex="0">Customer Support</h2>
+    <p>Dedicated Customer Support at EdenAura is designed to address all aftercare needs, service adjustments, and urgent requests. After a garden or tree care project, ongoing support ensures your property remains healthy and vibrant with minimal effort on your part. Support staff are available during business hours via phone, email, and live chat, offering expert guidance and prompt assistance. All customer support representatives undergo extensive training to handle diverse needs, including pest management, irrigation issues, seasonal upkeep advice, and more. Repairs, follow-up appointments, and emergency services can be scheduled seamlessly through the support team. We utilize advanced ticketing systems to track and resolve issues efficiently, providing you with timely updates throughout the resolution process.</p>
+    <p>Our support is also dedicated to helping clients make the most of our technological tools, including AI-powered garden monitoring and virtual landscape planning. We provide detailed tutorials and helpful resources to empower you to optimize your garden’s health. Customer satisfaction is our priority, and we regularly solicit feedback to improve our support offerings. We encourage you to contact support with any concerns, ensuring peace of mind and full lifecycle care. Whether it’s a quick question or complex request, EdenAura is committed to delivering superior customer service every time.</p>
+    <p>Service adjustments, such as schedule modifications or changes in scope, are handled swiftly and professionally by our support team. We value clear communication and transparency throughout. Contacting customer support also allows you to access exclusive tips, service reminders, and maintenance best practices. We are dedicated to building long-term relationships by providing consistent, reliable support that enhances your gardening experience.</p>
+    <p>If you experience any problems or have suggestions, customer support is your direct line to solutions and improvements. Our three pillars of responsiveness, expertise, and friendly service help us achieve high customer satisfaction. We’re here to listen, assist, and provide the gardening peace of mind you deserve throughout your EdenAura journey.</p>
+
+    <h2 tabindex="0">Service Scheduling</h2>
+    <p>Scheduling your EdenAura garden or tree care services is flexible and designed to accommodate your busy lifestyle. Our dedicated scheduling team is available to coordinate appointments at times convenient for you, including weekends and evenings where possible. Requests can be made by phone, email, or via the online customer portal. We encourage scheduling well in advance to ensure availability during peak seasons.</p>
+    <p>Our project managers provide detailed timelines and confirm appointments to guarantee clarity and ease. Each service visit is planned to maximize efficiency without compromising quality. We prioritize timely performance so your garden receives consistent care throughout the year. Rescheduling or cancellations are handled with courtesy, typically requiring 24 hours' notice. Clients are reminded promptly of upcoming appointments with helpful preparation instructions to ensure smooth service delivery.</p>
+    <p>Emergency service requests are evaluated case-by-case and met with rapid response when able. We strive to coordinate multiple services or visits to minimize disruptions. Our transparent scheduling process keeps you informed of any changes caused by weather or unforeseen factors.</p>
+    <p>EdenAura understands that life's circumstances change; our scheduling procedures are flexible to reflect that, adapting quickly to meet your garden's evolving needs. Client convenience, clear communication, and efficient planning remain embedded in every scheduling interaction. We are proud to offer modern tools like online scheduling requests and interactive calendars for your ease and control.</p>
+
+    <h2 tabindex="0">Office Locations</h2>
+    <p>EdenAura Garden Care proudly serves the New York area and surrounding communities with onsite visitations, professional consultations, and business offices located at 246 Greene St, New York, NY 10003, USA. Our main office is equipped with state-of-the-art facilities designed to support both client services and administrative functions. Visit our location during business hours to speak with our staff or schedule a consultation. We also provide virtual meetings to accommodate clients from other locations, ensuring accessibility and convenience.</p>
+    <p>Our commitment to local engagement includes partnering with community organizations, supporting local environmental initiatives, and fostering educational programs. For clients outside our immediate service area, we offer remote consultation and planning services utilizing the latest digital tools. Contact us for information on availability and service coverage.</p>
+    <p>Directions, parking details, and public transportation access information are available on our website. We encourage clients to reach out ahead for personalized assistance in planning their visit. Accessibility accommodations are provided to ensure all visitors can comfortably engage with our team. We value every opportunity to welcome clients and grow our community partnerships in sustainable gardening and care.</p>
+
+  </section>
+</main>
+
+<footer aria-label="Footer with company contact information">
+  &copy; 2024 EdenAura Garden Care | 
+  <a href="privacy.html">Privacy Policy</a> | 
+  <a href="terms.html">Terms & Conditions</a> | Contact us: 
+  <a href="tel:+12125552368" aria-label="Phone number">(212) 555-2368</a> | 
+  <a href="mailto:info@edenaura.com" aria-label="Email address">info@edenaura.com</a>
+</footer>
+
+<script>
+  const menuOpenBtn = document.getElementById('menu-open');
+  const menuCloseBtn = document.getElementById('menu-close');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuOpenBtn.addEventListener('click', () => {
+    mobileMenu.classList.add('show');
+    mobileMenu.setAttribute('aria-hidden', 'false');
+    mobileMenu.querySelector('a').focus();
+  });
+  menuCloseBtn.addEventListener('click', () => {
+    mobileMenu.classList.remove('show');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    menuOpenBtn.focus();
+  });
+
+  menuOpenBtn.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      menuOpenBtn.click();
+    }
+  });
+  menuCloseBtn.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      menuCloseBtn.click();
+    }
+  });
+
+  Array.from(mobileMenu.querySelectorAll('a')).forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('show');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      menuOpenBtn.focus();
+    });
+  });
+
+  const leafContainer = document.querySelector('.leaf-animation-container');
+  function createLeaf() {
+    const leaf = document.createElement('div');
+    leaf.classList.add('leaf');
+    leaf.style.left = Math.random() * 100 + 'vw';
+    leaf.style.animationDuration = (8 + Math.random() * 6) + 's';
+    leaf.style.animationDelay = (Math.random() * 10) + 's';
+    leafContainer.appendChild(leaf);
+    setTimeout(() => {
+      leaf.remove();
+    }, 15000);
+  }
+  setInterval(createLeaf, 800);
+</script>
+</body>
+</html>
+

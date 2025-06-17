@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>EdenAura - Terms and Conditions</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&amp;display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<style>
+  /* Reset & base */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    /* Theme: vibrant green and warm beige tones */
+    background: linear-gradient(135deg, #f3f9f1 0%, #d7e9c3 100%);
+    color: #2f4f2f;
+    line-height: 1.7;
+    font-size: 18px;
+    overflow-x: hidden;
+  }
+  a {
+    color: #396930;
+    text-decoration: none;
+  }
+  a:hover, a:focus {
+    text-decoration: underline;
+    outline: none;
+  }
+  .material-icons {
+    vertical-align: middle;
+    font-size: 22px;
+  }
+  .container {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+  section {
+    padding: 56px 0;
+  }
+  h1, h2, h3 {
+    font-weight: 800;
+    color: #205020;
+    margin-bottom: 28px;
+    text-shadow: 1px 1px 2px rgba(160, 198, 140, 0.3);
+  }
+  h1 {
+    font-size: 3.8rem;
+    line-height: 1.1;
+  }
+  h2 {
+    font-size: 2.6rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  p {
+    color: #153715;
+    margin-bottom: 24px;
+    max-width: 900px;
+    font-weight: 600;
+  }
+  ul {
+    max-width: 720px;
+    margin-left: 36px;
+    list-style-type: disc;
+    color: #245624;
+    font-weight: 600;
+  }
+  ul li {
+    margin-bottom: 16px;
+  }
+  header {
+    background-color: #e8f2d6;
+    border-bottom: 3px solid #a3bf7d;
+    position: sticky;
+    top: 0;
+    z-index: 1600;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1250px;
+    padding: 20px 28px;
+    margin: 0 auto;
+  }
+  .logo {
+    font-weight: 900;
+    font-size: 2rem;
+    color: #2c592c;
+    letter-spacing: 1.5px;
+    user-select: none;
+    font-family: 'Poppins', sans-serif;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+  }
+  nav a {
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    letter-spacing: 0.04em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  nav a:hover,
+  nav a:focus {
+    background-color: #a3bf7d;
+    color: #f5faf1;
+    outline-offset: 3px;
+  }
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+  .nav-links a.active {
+    background-color: #629f38;
+    color: #f0f9e8;
+  }
+  .material-icons.menu-icon {
+    font-size: 36px;
+    cursor: pointer;
+    display: none;
+    color: #2c592c;
+    transition: color 0.3s ease;
+  }
+  .material-icons.menu-icon:hover,
+  .material-icons.menu-icon:focus {
+    color: #4a7c2f;
+    outline: none;
+  }
+  #mobile-menu {
+    position: fixed;
+    top: 70px;
+    right: 0;
+    width: 320px;
+    height: calc(100vh - 70px);
+    background-color: #e8f2d6;
+    box-shadow: -6px 0 24px rgba(0,0,0,0.15);
+    transform: translateX(100%);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1650;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+  #mobile-menu.show {
+    transform: translateX(0);
+  }
+  #mobile-menu a {
+    padding: 14px 32px;
+    font-weight: 700;
+    font-size: 1.3rem;
+    border-radius: 14px;
+    color: #2d6a2d;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  #mobile-menu a:hover, #mobile-menu a:focus {
+    background-color: #7bb65f;
+    color: white;
+  }
+  #mobile-menu .close-btn {
+    align-self: flex-end;
+    margin-right: 24px;
+    cursor: pointer;
+    font-size: 38px;
+    color: #3fa53f;
+  }
+  #mobile-menu .close-btn:hover,
+  #mobile-menu .close-btn:focus {
+    color: #2b5d2b;
+    outline: none;
+  }
+  .leaf-animation-container {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: visible;
+  }
+  .leaf {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    background: url('https://cdn-icons-png.flaticon.com/512/415/415031.png') no-repeat center/contain;
+    animation-name: floatUp;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    opacity: 0.75;
+  }
+  @keyframes floatUp {
+    0% {
+      transform: translateY(100vh) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-10vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+  footer {
+    background-color: #205020;
+    color: #e3f0d8;
+    text-align: center;
+    padding: 32px 20px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    font-size: 1rem;
+  }
+  footer a {
+    color: #c4e1a5;
+    font-weight: 700;
+  }
+  footer a:hover,
+  footer a:focus {
+    text-decoration: underline;
+  }
+  @media (max-width: 767px) {
+    .material-icons.menu-icon {
+      display: block;
+    }
+    nav .nav-links {
+      display: none;
+    }
+    #privacy-content p {
+      max-width: 100%;
+      margin: 0 16px 24px;
+      font-size: 1rem;
+    }
+    footer {
+      font-size: 0.9rem;
+      padding: 24px 16px;
+    }
+  }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .material-icons.menu-icon {
+      display: block;
+    }
+    nav .nav-links {
+      display: none;
+    }
+  }
+  @media (min-width: 1024px) {
+    #mobile-menu {
+      display: none !important;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner container">
+    <div class="logo" tabindex="0" aria-label="EdenAura logo and home link">EdenAura</div>
+    <nav aria-label="Primary navigation">
+      <div class="nav-links">
+       <a href="index.html" tabindex="0">Home</a>
+        <a href="privacy.html" tabindex="0">Privacy</a>
+        <a href="terms.html" tabindex="0"aria-current="page">Terms & conditons</a>
+        <a href="cookies.html"tabindex="0">Cookies</a>
+        <a href="contact.html" tabindex="0">Contact us</a>
+      </div>
+      <span class="material-icons menu-icon" id="menu-open" aria-label="Open menu" role="button" tabindex="0">menu</span>
+    </nav>
+  </div>
+  <nav id="mobile-menu" aria-label="Mobile menu" role="navigation" aria-hidden="true">
+    <span class="material-icons close-btn" id="menu-close" aria-label="Close menu" role="button" tabindex="0">close</span>
+   <a href="index.html" tabindex="0">Home</a>
+        <a href="privacy.html" tabindex="0">Privacy</a>
+        <a href="terms.html" tabindex="0"aria-current="page">Terms & conditons</a>
+        <a href="cookies.html"tabindex="0">Cookies</a>
+        <a href="contact.html" tabindex="0">Contact us</a>
+  </nav>
+</header>
+
+<div class="leaf-animation-container" aria-hidden="true"></div>
+
+<main class="container" aria-label="Terms and Conditions Content">
+  <section id="terms-content">
+    <h1 tabindex="0">Terms and Conditions</h1>
+
+    <h2 tabindex="0">Introduction</h2>
+    <p>EdenAura Garden Care operates its website and services subject to these Terms and Conditions, which govern your use of our products and services. Please read these Terms carefully before accessing or using our website or services. By accessing or using EdenAura’s services, you agree to be bound by these Terms, whether or not you register as a user. If you do not agree with any part of these Terms, you must not use the site or services. We reserve the right to change or update these Terms at any time; we advise you to check this page periodically for updates. Continued use of the site following updates means acceptance of the new Terms. These Terms constitute the entire agreement between you and EdenAura regarding your use of our services and supersede any prior agreements. We encourage you to contact us if you have any questions regarding these Terms or your use of our services. By agreeing, you confirm that you have the legal capacity to enter into this agreement.</p>
+
+    <h2 tabindex="0">Use of Services</h2>
+    <p>Use of EdenAura’s professional gardening, tree care, and landscape services is offered under these Terms. You agree to use all services lawfully and ethically. You must provide accurate information about your property and relevant conditions to enable us to deliver effective services. Our services are provided based on availability, and we reserve the right to limit or refuse service at our discretion. Customers must ensure they have all necessary permissions and comply with local regulations before work commences. You accept that natural variations in plant health, weather, and other environmental factors may affect results. Unauthorized use of services or their content is prohibited. Any promotional materials or offers are subject to specific terms, which will be disclosed separately. You agree to cooperate with EdenAura staff and provide reasonable access to your property. We aim to provide professional, diligent service in line with the highest horticultural standards.</p>
+
+    <h2 tabindex="0">Pricing and Payment</h2>
+    <p>Service prices are listed on our website or provided in written proposals. These prices exclude applicable taxes unless otherwise stated. Pricing may vary based on geographic location, scope of work, and service complexity. We reserve the right to revise pricing due to changes in costs or additional client requests; such revisions will be communicated promptly. Payment terms are agreed upon in writing and must be adhered to for uninterrupted service. We accept multiple payment methods, including credit/debit cards, bank transfers, and electronic payment systems. Clients are responsible for timely payments; late payments may incur fees or service suspension. Refunds are provided at our discretion and only when services are not rendered as agreed. We maintain PCI DSS compliance for payment security and privacy. Should you notice any billing errors, please contact us immediately to resolve them. Our pricing policy aims to ensure fair, transparent dealings with all clients.</p>
+
+    <h2 tabindex="0">Intellectual Property</h2>
+    <p>All materials associated with EdenAura products and services—including website content, designs, logos, branding, images, and proprietary methodologies—are owned exclusively by EdenAura or its licensors. Use, reproduction, or distribution of our intellectual property without prior explicit permission is prohibited. Customers granted use of design or service outputs receive only non-exclusive, non-transferable licenses for personal or business use. EdenAura retains all ownership rights and reserves the right to withdraw licenses for non-compliance. Any user-generated content submitted may be used by EdenAura for marketing or educational purposes but remains subject to consent provisions. We respect intellectual property laws and expect users to do likewise. Requests for use or licensing of our intellectual property must be submitted in writing and approved. Violations of intellectual property rights can result in legal action and termination of services. EdenAura’s commitment to innovation and originality is central to its brand and mission.</p>
+
+    <h2 tabindex="0">Limitation of Liability</h2>
+    <p>EdenAura endeavors to provide reliable and safe services, but we disclaim all liability for indirect, incidental, or consequential damages arising from use or inability to use our services. We make no guarantees regarding specific outcomes, as horticultural results depend on variables outside our control. Liability for direct damages caused by negligence is capped at the fees paid for the affected service. We are not responsible for damages due to misuse, neglect, or unauthorized modifications by the client. We disclaim liability related to third-party services or goods procured through EdenAura. Any claims must be filed promptly within statutory periods. This limitation of liability does not affect rights that cannot legally be waived. Clients are advised to maintain appropriate insurance coverage. EdenAura’s liability exclusions ensure sustainability of service delivery within the bounds of reasonable risk allocation.</p>
+
+    <h2 tabindex="0">Termination</h2>
+    <p>EdenAura may terminate or suspend services at its sole discretion for violations of these Terms, non-payment, illegal or unethical conduct, or any action jeopardizing safety or reputation. Termination notices will be provided, outlining reasons and effective dates. Upon termination, outstanding fees become immediately due, and access to EdenAura platforms may be disabled. Termination does not absolve parties of accrued obligations, indemnity commitments, or confidentiality duties. Clients may terminate agreements in compliance with agreed notice periods and terms. Suspensions may be temporary pending issue resolution. All intellectual property and confidential information obligations survive termination. Unauthorized retention or use of proprietary materials after termination is prohibited. EdenAura strives to resolve disputes amicably but reserves all legal and equitable remedies.</p>
+
+    <h2 tabindex="0">Governing Law and Jurisdiction</h2>
+    <p>These Terms and related disputes are governed by the laws of the State of New York, without regard to conflict of law rules. Jurisdiction and venue for any disputes shall be exclusively in the courts of New York County. Parties agree to submit to such courts and waive defenses regarding venue inconvenience or forum non conveniens. Alternative dispute resolution is encouraged to avoid litigation. Legal costs and fees for enforcement actions may be awarded to the prevailing party. These provisions do not limit mandatory consumer protection rights where applicable. We affirm commitment to transparency and fairness under governing laws. Invalid provisions do not affect remainder of these Terms. Headings are for convenience and do not affect interpretation. Parties are bound by these terms in their entirety and agree to uphold them faithfully.</p>
+
+    <h2 tabindex="0">User Conduct</h2>
+    <p>Users of EdenAura’s website and services must act responsibly, ethically, and lawfully. Prohibited conduct includes fraudulent actions, spreading misinformation, harassing behavior, intellectual property infringement, and interference with system operations. We reserve the right to remove or restrict access to users violating these guidelines. Respectful communication supports a safe and productive environment for all customers and staff. Users are encouraged to promptly report any violations or suspicious activity. The user conduct section protects the integrity of our services and the safety of our community. Non-compliance may result in account suspension or legal actions. EdenAura prioritizes compliance and wellbeing. We monitor service use and intervene as necessary to uphold standards.</p>
+
+    <h2 tabindex="0">Disclaimer of Warranties</h2>
+    <p>All services, content, and website access are provided "as is" without any warranties of any kind, either express or implied. We do not guarantee uninterrupted or error-free operation. While we strive for accuracy, we cannot warrant completeness or suitability for individual circumstances. Reliance on EdenAura’s advice or materials is at the user’s own risk. Third-party content is provided for convenience only and does not constitute endorsements. We expressly disclaim all warranties of merchantability, fitness for a particular purpose, non-infringement, or accuracy. External factors like weather or unforeseen events may impact gardening outcomes despite our efforts. EdenAura assumes no responsibility for lost profits, damages, or consequences from use of our services. This disclaimer does not affect consumer rights under applicable legislation. We emphasize transparency about service limitations. Our commitment to quality encourages informed, prudent use.</p>
+
+    <h2 tabindex="0">Indemnification</h2>
+    <p>Clients agree to defend, indemnify, and hold EdenAura harmless from any claims, losses, damages, liabilities, and expenses arising from their misuse of services or violation of Terms. This includes but is not limited to legal fees and damages incurred by EdenAura as a result of client actions. Indemnification obligations survive termination of service agreements. EdenAura reserves the right to assume control of defense at client expense. Client cooperation in defense is required. This clause is crucial to risk management for both parties. It ensures service sustainability and fair allocation of responsibility. Clients warrant the legality and propriety of their activities. We promote responsible engagement and proactive communication to resolve conflicts amicably.</p>
+
+    <h2 tabindex="0">Force Majeure</h2>
+    <p>Neither EdenAura nor its clients are liable for failure or delays caused by events beyond reasonable control, including natural disasters, pandemics, government actions, or infrastructure failures. We will notify affected parties promptly and work collaboratively to resume services. Force majeure does not excuse payment obligations accrued prior to the event. Contingency planning and flexibility help manage such interruptions. This clause protects both parties from unforeseen risks and liabilities. EdenAura strives to maintain safety and service continuity despite challenges. We encourage clients to anticipate and plan for potential disruptions. Cooperation facilitates timely resolution and mitigates impact. Transparency about force majeure events reflects our commitment to fair treatment.</p>
+
+    <h2 tabindex="0">Privacy & Data Protection</h2>
+    <p>We respect your privacy and handle personal data responsibly under applicable laws, including GDPR. Personal information collected is used solely for service delivery, billing, communication, and improvement. EdenAura implements technical and organizational measures to ensure data security and confidentiality. We do not sell or disclose personal information to unauthorized third parties. Clients have rights to access, rectify, or delete their personal data. Updated policies are available and communicated regularly. Consent is sought for marketing communications and data processing where legally required. We encourage clients to contact our Data Protection Officer with privacy concerns. Protecting your information is integral to our service and trust.</p>
+
+    <h2 tabindex="0">Intellectual Property Rights</h2>
+    <p>Intellectual property rights in all EdenAura content, logos, software, designs, and methodologies belong exclusively to EdenAura or its licensors. Unauthorized use, reproduction, or distribution is prohibited. Clients receive limited licenses for personal or business purposes, as expressly granted in contracts or terms. Users agree not to reverse-engineer or copy proprietary materials. All rights are reserved, and infringement may lead to legal consequences. We anticipate respectful use of our creative and technical assets. Third-party intellectual property is also protected and only used with permission. This clause safeguards creativity, innovation, and business integrity. Clients or users may request licenses for additional uses. We uphold intellectual property as foundational to our business.</p>
+
+    <h2 tabindex="0">Customer Testimonials and User Content</h2>
+    <p>Any testimonials, reviews, or user-generated content submitted to EdenAura may be used for promotional and educational purposes, subject to applicable consents. We strive to represent client feedback truthfully and ethically. Clients retain rights over their original content, but grant us permission to publish and display content online or in marketing materials. Content must not contain defamatory, illegal, or offensive materials. EdenAura reserves the right to moderate or remove inappropriate content. User contributions enhance community engagement and service quality. We respect privacy rights and comply with applicable communications regulations. Testimonials aim to offer potential clients genuine insights. Misuse or fraudulent content is grounds for removal and investigation. We encourage honest and constructive feedback.</p>
+
+    <h2 tabindex="0">Amendments to Terms</h2>
+    <p>EdenAura reserves the right to update or amend these Terms and Conditions at any time without prior notice. Changes will be posted on this page and take immediate effect upon publication. Users are encouraged to review these Terms periodically. Continued use of services after updates means acceptance of the revised Terms. Material changes affecting client rights or obligations will be communicated directly where possible. Amendments may reflect changes in law, technology, or business practices. We strive for transparency and fairness in all updates. Clients may request clarification on terms or changes. Non-acceptance of modifications requires discontinuation of service use. Our evolving Terms ensure compliance and service excellence. Your feedback on Terms professionalization is valued.</p>
+  </section>
+</main>
+
+<footer aria-label="Footer with company contact information">
+  &copy; 2024 EdenAura Garden Care | 
+  <a href="privacy.html">Privacy Policy</a> | 
+  <a href="terms.html" aria-current="page">Terms & Conditions</a> | Contact us: 
+  <a href="tel:+12125552368" aria-label="Phone number">(212) 555-2368</a> | 
+  <a href="mailto:info@edenaura.com" aria-label="Email address">info@edenaura.com</a>
+</footer>
+
+<script>
+  const menuOpenBtn = document.getElementById('menu-open');
+  const menuCloseBtn = document.getElementById('menu-close');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuOpenBtn.addEventListener('click', () => {
+    mobileMenu.classList.add('show');
+    mobileMenu.setAttribute('aria-hidden', 'false');
+    mobileMenu.querySelector('a').focus();
+  });
+  menuCloseBtn.addEventListener('click', () => {
+    mobileMenu.classList.remove('show');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    menuOpenBtn.focus();
+  });
+
+  menuOpenBtn.addEventListener('keydown', e => {
+    if(e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault(); menuOpenBtn.click();
+    }
+  });
+  menuCloseBtn.addEventListener('keydown', e => {
+    if(e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault(); menuCloseBtn.click();
+    }
+  });
+
+  Array.from(mobileMenu.querySelectorAll('a')).forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('show');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      menuOpenBtn.focus();
+    });
+  });
+
+  const leafContainer = document.querySelector('.leaf-animation-container');
+  function createLeaf() {
+    const leaf = document.createElement('div');
+    leaf.classList.add('leaf');
+    leaf.style.left = Math.random() * 100 + "vw";
+    leaf.style.animationDuration = (8 + Math.random() * 6) + "s";
+    leaf.style.animationDelay = (Math.random() * 10) + "s";
+    leafContainer.appendChild(leaf);
+    setTimeout(() => {
+      leaf.remove();
+    }, 15000);
+  }
+  setInterval(createLeaf, 800);
+</script>
+</body>
+</html>
+
+

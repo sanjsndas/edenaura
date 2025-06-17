@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>EdenAura - Privacy Policy</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<style>
+  /* Reset & base */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #f3f9f1 0%, #d7e9c3 100%);
+    color: #2f4f2f;
+    line-height: 1.7;
+    font-size: 18px;
+    overflow-x: hidden;
+  }
+  a {
+    color: #396930;
+    text-decoration: none;
+  }
+  a:hover, a:focus {
+    text-decoration: underline;
+    outline: none;
+  }
+  .material-icons {
+    vertical-align: middle;
+    font-size: 22px;
+  }
+  .container {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+  section {
+    padding: 56px 0;
+  }
+  h1, h2, h3 {
+    font-weight: 800;
+    color: #205020;
+    margin-bottom: 28px;
+    text-shadow: 1px 1px 2px rgba(160, 198, 140, 0.3);
+  }
+  h1 {
+    font-size: 3.8rem;
+    line-height: 1.1;
+  }
+  h2 {
+    font-size: 2.6rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  p {
+    color: #153715;
+    margin-bottom: 28px;
+    max-width: 720px;
+  }
+  ul {
+    max-width: 720px;
+    margin-left: 36px;
+    list-style-type: disc;
+    color: #245624;
+    font-weight: 600;
+  }
+  ul li {
+    margin-bottom: 14px;
+  }
+  header {
+    background-color: #e8f2d6;
+    border-bottom: 3px solid #a3bf7d;
+    position: sticky;
+    top: 0;
+    z-index: 1600;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1250px;
+    padding: 20px 28px;
+    margin: 0 auto;
+  }
+  .logo {
+    font-weight: 900;
+    font-size: 2rem;
+    color: #2c592c;
+    letter-spacing: 1.5px;
+    user-select: none;
+    font-family: 'Poppins', sans-serif;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+  }
+  nav a {
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    letter-spacing: 0.04em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  nav a:hover,
+  nav a:focus {
+    background-color: #a3bf7d;
+    color: #f5faf1;
+    outline-offset: 3px;
+  }
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+  .nav-links a.active {
+    background-color: #629f38;
+    color: #f0f9e8;
+  }
+  .material-icons.menu-icon {
+    font-size: 36px;
+    cursor: pointer;
+    display: none;
+    color: #2c592c;
+    transition: color 0.3s ease;
+  }
+  .material-icons.menu-icon:hover,
+  .material-icons.menu-icon:focus {
+    color: #4a7c2f;
+    outline: none;
+  }
+  #mobile-menu {
+    position: fixed;
+    top: 70px;
+    right: 0;
+    width: 320px;
+    height: calc(100vh - 70px);
+    background-color: #e8f2d6;
+    box-shadow: -6px 0 24px rgba(0,0,0,0.15);
+    transform: translateX(100%);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1650;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+  #mobile-menu.show {
+    transform: translateX(0);
+  }
+  #mobile-menu a {
+    padding: 14px 32px;
+    font-weight: 700;
+    font-size: 1.3rem;
+    border-radius: 14px;
+    color: #2d6a2d;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  #mobile-menu a:hover, #mobile-menu a:focus {
+    background-color: #7bb65f;
+    color: white;
+  }
+  #mobile-menu .close-btn {
+    align-self: flex-end;
+    margin-right: 24px;
+    cursor: pointer;
+    font-size: 38px;
+    color: #3fa53f;
+  }
+  #mobile-menu .close-btn:hover,
+  #mobile-menu .close-btn:focus {
+    color: #2b5d2b;
+    outline: none;
+  }
+  .leaf-animation-container {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: visible;
+  }
+  .leaf {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    background: url('https://cdn-icons-png.flaticon.com/512/415/415031.png') no-repeat center/contain;
+    animation-name: floatUp;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    opacity: 0.75;
+  }
+  @keyframes floatUp {
+    0% {
+      transform: translateY(100vh) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-10vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+  #privacy-content p {
+    max-width: 810px;
+    margin-bottom: 24px;
+    font-size: 1.1rem;
+    color: #2d552d;
+  }
+  footer {
+    background-color: #205020;
+    color: #e3f0d8;
+    text-align: center;
+    padding: 32px 20px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    font-size: 1rem;
+  }
+  footer a {
+    color: #c4e1a5;
+    font-weight: 700;
+  }
+  footer a:hover,
+  footer a:focus {
+    text-decoration: underline;
+  }
+  @media (max-width: 767px) {
+    .material-icons.menu-icon {
+      display: block;
+    }
+    nav .nav-links {
+      display: none;
+    }
+    #privacy-content p {
+      max-width: 100%;
+      margin: 0 16px 24px;
+      font-size: 1rem;
+    }
+    footer {
+      font-size: 0.9rem;
+      padding: 24px 16px;
+    }
+  }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .material-icons.menu-icon {
+      display: block;
+    }
+    nav .nav-links {
+      display: none;
+    }
+  }
+  @media (min-width: 1024px) {
+    #mobile-menu {
+      display: none !important;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner container">
+    <div class="logo" tabindex="0" aria-label="EdenAura logo and home link">EdenAura</div>
+    <nav aria-label="Primary navigation">
+      <div class="nav-links">
+      <a href="index.html" tabindex="0">Home</a>
+        <a href="privacy.html" tabindex="0"aria-current="page">Privacy</a>
+        <a href="terms.html" tabindex="0">Terms & conditons</a>
+        <a href="cookies.html"tabindex="0">Cookies</a>
+        <a href="contact.html" tabindex="0">Contact us</a>
+      </div>
+      <span class="material-icons menu-icon" id="menu-open" aria-label="Open menu" role="button" tabindex="0">menu</span>
+    </nav>
+  </div>
+  <nav id="mobile-menu" aria-label="Mobile menu" role="navigation" aria-hidden="true">
+    <span class="material-icons close-btn" id="menu-close" aria-label="Close menu" role="button" tabindex="0">close</span>
+     <a href="index.html" tabindex="0">Home</a>
+        <a href="privacy.html" tabindex="0"aria-current="page">Privacy</a>
+        <a href="terms.html" tabindex="0">Terms & conditons</a>
+        <a href="cookies.html"tabindex="0">Cookies</a>
+        <a href="contact.html" tabindex="0">Contact us</a>
+      </div>
+  </nav>
+</header>
+
+<div class="leaf-animation-container" aria-hidden="true"></div>
+
+<main class="container" aria-label="Privacy Policy Content">
+  <section id="privacy-content">
+    <h1 tabindex="0">Privacy Policy</h1>
+
+    <h2 tabindex="0">Introduction</h2>
+    <p>EdenAura is committed to protecting and respecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your personal information when you visit our website or use our services. We take your privacy seriously and ensure your data is handled securely and transparently.</p>
+    <p>We continuously review our policies to keep them updated with the latest legal requirements and best practices, reflecting our dedication to protecting your personal information. By using our services, you consent to the practices described in this policy.</p>
+    <p>Our goal is to provide a safe online environment for you, where you can interact and benefit from our professional gardening and tree care solutions without concerns about data misuse or privacy breaches.</p>
+    <p>Should you have any questions regarding this Privacy Policy or about your data privacy, please do not hesitate to contact our data protection officer via the contact details provided at the end of this policy.</p>
+    <p>Your trust is paramount, and we strive to ensure that your personal information remains confidential and secure during your engagement with EdenAura.</p>
+    <p>We encourage you to read this policy carefully to understand our practices and how your data is protected.</p>
+    <p>This policy applies equally to all visitors, clients, and users of our products and services, irrespective of geography or access method.</p>
+    <p>EdenAura encompasses all online platforms we operate, including this website, mobile apps, social media channels, and any customer interaction portals.</p>
+    <p>We are committed to complying with all relevant data protection laws including GDPR (General Data Protection Regulation) and applicable local legislation in the jurisdictions where we operate.</p>
+    <p>Thank you for placing your confidence in EdenAura and for reviewing our Privacy Policy.</p>
+
+    <h2 tabindex="0">Information We Collect</h2>
+    <p>We collect various types of information to provide and improve our services. The types of data collected include personal identification information, contact details, and use data from your interactions with our services.</p>
+    <p>Your personal data may include your name, email address, phone number, mailing address, and payment details when you engage with our services or make transactions.</p>
+    <p>We also collect non-personally identifiable information such as browser type, IP address, device information, and location data to improve user experience and for security purposes.</p>
+    <p>Data is also collected through cookies and tracking technologies to monitor site performance, analyze user behavior, and personalize your experience.</p>
+    <p>Additional data may be collected when you voluntarily provide information through forms, surveys, newsletters, or customer support interactions.</p>
+    <p>Any information you provide during account registration or service subscription is also securely stored and processed.</p>
+    <p>We do not collect sensitive personal data unless explicitly provided and consented to, and such data is handled per strict confidentiality protocols.</p>
+    <p>All information collected is used in accordance with this policy and applicable law to serve you better.</p>
+    <p>We retain collected information only as long as necessary for the purposes outlined in this policy or to comply with legal obligations.</p>
+    <p>Should you wish to know more about our data collection practices or request deletion of your personal data, contact our privacy team using the contact details below.</p>
+
+    <h2 tabindex="0">How We Use Your Information</h2>
+    <p>The information we collect is used to deliver, maintain, and improve our services and communication with you. This includes processing your service requests, managing your account, and providing customer support.</p>
+    <p>We use personal data to personalize your experience by understanding preferences and offering relevant content and services.</p>
+    <p>Emails and newsletters are sent only with your explicit consent, providing updates, offers, and important notifications.</p>
+    <p>We may use aggregated, anonymized data to analyze trends and user behavior to enhance our offerings.</p>
+    <p>Personal data may be shared with trusted third-party service providers who assist us in providing services, but never for marketing purposes without your consent.</p>
+    <p>Data is used to comply with legal obligations, enforce our policies, and protect against fraudulent or unlawful activities.</p>
+    <p>We implement robust security measures to ensure your data is protected from unauthorized access or breaches.</p>
+    <p>If you choose to participate in customer surveys or feedback, your responses may be used to improve our services and displayed anonymously.</p>
+    <p>We respect your preferences and will honor any requests to opt out of data collection or communications where applicable.</p>
+    <p>Your trust is vital to us, and we ensure data is used responsibly and ethically at all times.</p>
+
+    <h2 tabindex="0">Cookies and Tracking Technologies</h2>
+    <p>Our website uses cookies and similar tracking technologies to enhance your browsing experience, understand user behavior, and improve our services.</p>
+    <p>Cookies are small text files placed on your device to remember your preferences, login status, and provide personalized content based on your history.</p>
+    <p>We use both session cookies, which expire when you close your browser, and persistent cookies that remain for future visits.</p>
+    <p>You can control or disable cookies via your browser settings; however, disabling certain cookies may limit functionality and user experience.</p>
+    <p>Tracking technologies also help us monitor traffic patterns, analyze web performance, and detect security issues.</p>
+    <p>Third-party services integrated into our website may also use cookies for analytics and advertising; their policies govern how data is used.</p>
+    <p>We do not use cookies to collect personally identifiable information without your consent.</p>
+    <p>With your consent, data collected may be used for targeted advertising and remarketing efforts to provide more relevant offers.</p>
+    <p>Regular audits ensure compliance with data privacy laws governing cookie use and tracking technologies.</p>
+    <p>For more information on managing cookies and your privacy rights, please refer to your browser’s privacy settings or contact us directly.</p>
+
+    <h2 tabindex="0">Data Security</h2>
+    <p>We implement comprehensive security controls to protect your personal information from unauthorized access, disclosure, alteration, or destruction.</p>
+    <p>Our data centers and systems employ encryption, firewalls, access controls, and vulnerability management to maintain strong security postures.</p>
+    <p>Access to personal data is restricted to authorized personnel only, and all staff receives training on data protection principles.</p>
+    <p>We conduct regular security audits and assessments to identify and mitigate potential risks.</p>
+    <p>Incident response plans are in place to act swiftly in the unlikely event of a data breach, minimizing any impact on you.</p>
+    <p>While we strive to ensure maximum security, transmission of data over the internet cannot be guaranteed entirely secure.</p>
+    <p>You can assist us by using strong passwords, logging out after sessions, and reporting any suspicious activity.</p>
+    <p>All service providers we engage also meet stringent security and confidentiality requirements.</p>
+    <p>Your privacy and data security are paramount to our ongoing operations and success.</p>
+    <p>Contact us immediately if you have concerns about your data security or wish to learn more about our security measures.</p>
+
+    <h2 tabindex="0">Your Rights</h2>
+    <p>Under applicable data protection regulations, you have specific rights regarding your personal information.</p>
+    <p>You may request access to the personal data we hold about you, including information about processing purposes, data categories, recipients, and retention periods.</p>
+    <p>You have the right to request corrections for any inaccurate or incomplete data we hold.</p>
+    <p>You may request deletion of your personal data where permitted by law, such as when data is no longer necessary or consent is withdrawn.</p>
+    <p>You have the right to object to or restrict certain types of data processing, including direct marketing.</p>
+    <p>You may request transfer of your personal data to another service provider in a structured, machine-readable format.</p>
+    <p>Where we rely on your consent for processing, you have the right to withdraw consent at any time without affecting the lawfulness of prior processing.</p>
+    <p>You can exercise these rights by contacting our Data Protection Officer using the details provided below.</p>
+    <p>We will respond to all requests in a timely manner and in accordance with applicable laws.</p>
+    <p>For more detailed information about your rights and how we protect them, please contact us or consult the relevant data protection authority guidance.</p>
+
+    <h2 tabindex="0">Children's Privacy</h2>
+    <p>Our website and services are not directed to children under the age of 16, and we do not knowingly collect personal information from children.</p>
+    <p>We encourage parents and guardians to monitor their children’s online activities and guide them in understanding privacy and safety online.</p>
+    <p>If we become aware that we have inadvertently collected personal information from a child under 16, we will take immediate steps to delete that information.</p>
+    <p>Children's privacy and safety online is a serious priority, and we comply with regulations such as COPPA to protect their data.</p>
+    <p>We do not target advertising or marketing campaigns to children and do not share children’s information with third parties.</p>
+    <p>Should you suspect your child has provided information to us without consent, please contact us immediately so we can take appropriate action.</p>
+    <p>Our full privacy practices extend to all users regardless of age, with an emphasis on transparency and responsible data handling.</p>
+    <p>Parents and guardians are encouraged to review our policies and discuss safe internet use and data privacy with children in their care.</p>
+    <p>We continuously evaluate our practices to ensure compliance and protection of children’s personal information online.</p>
+    <p>Your child’s privacy and safety is important to us, and we remain vigilant in protecting it.</p>
+
+    <h2 tabindex="0">Third-Party Links and Services</h2>
+    <p>Our website may contain links to third-party websites and services that are not operated or controlled by EdenAura.</p>
+    <p>We are not responsible for the privacy practices or content of these external sites and encourage you to review their privacy policies before using their services.</p>
+    <p>Such third parties may collect data independently or via cookies and tracking technologies when you visit their platforms.</p>
+    <p>EdenAura may use third-party service providers for analytics, marketing, and customer service to enhance our offerings.</p>
+    <p>These providers are carefully vetted and contractually bound to protect your personal information and use it only for authorized purposes.</p>
+    <p>Some integrations may include social media platforms, payment processors, or cloud services, each with their own privacy controls.</p>
+    <p>Please contact the relevant third party directly for questions about their privacy practices or data security.</p>
+    <p>Our privacy policy applies only to information collected by EdenAura directly and not to third-party interactions.</p>
+    <p>We strive to operate transparently and provide clear information about any third-party interactions on our website or services.</p>
+    <p>Should you encounter any suspicious or unauthorized links or practices on our site, please notify us promptly.</p>
+
+    <h2 tabindex="0">Contact Us</h2>
+    <p>If you have any questions, concerns, or requests related to this Privacy Policy or your personal data, please contact EdenAura’s Data Protection Officer at:</p>
+    <p>Email: <a href="mailto:privacy@edenaura.com">privacy@edenaura.com</a></p>
+    <p>Phone: (212) 555-2368</p>
+    <p>Mail: EdenAura Garden Care, Attn: Data Protection Officer, 246 Greene St, New York, NY 10003, USA</p>
+    <p>We are committed to addressing your privacy inquiries promptly and thoroughly, ensuring your rights are respected and your data is protected.</p>
+    <p>Thank you for trusting EdenAura with your gardening and tree care needs.</p>
+  </section>
+</main>
+
+<footer aria-label="Footer with company contact information">
+  &copy; 2024 EdenAura Garden Care | 
+  <a href="privacy.html">Privacy Policy</a> | 
+  <a href="index.html#disclaimer">Disclaimer</a> | Contact us: 
+  <a href="tel:+12125552368" aria-label="Phone number">(212) 555-2368</a> | 
+  <a href="mailto:info@edenaura.com" aria-label="Email address">info@edenaura.com</a>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  const menuOpenBtn = document.getElementById('menu-open');
+  const menuCloseBtn = document.getElementById('menu-close');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuOpenBtn.addEventListener('click', () => {
+    mobileMenu.classList.add('show');
+    mobileMenu.setAttribute('aria-hidden', 'false');
+    mobileMenu.querySelector('a').focus();
+  });
+  menuCloseBtn.addEventListener('click', () => {
+    mobileMenu.classList.remove('show');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    menuOpenBtn.focus();
+  });
+
+  menuOpenBtn.addEventListener('keydown', e => {
+    if(e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      menuOpenBtn.click();
+    }
+  });
+  menuCloseBtn.addEventListener('keydown', e => {
+    if(e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      menuCloseBtn.click();
+    }
+  });
+
+  Array.from(mobileMenu.querySelectorAll('a')).forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('show');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      menuOpenBtn.focus();
+    });
+  });
+
+  // Leaf animation generator
+  const leafContainer = document.querySelector('.leaf-animation-container');
+  function createLeaf() {
+    const leaf = document.createElement('div');
+    leaf.classList.add('leaf');
+    leaf.style.left = Math.random() * 100 + "vw";
+    leaf.style.animationDuration = (8 + Math.random() * 6) + "s";
+    leaf.style.animationDelay = (Math.random() * 10) + "s";
+    leafContainer.appendChild(leaf);
+    setTimeout(() => {
+      leaf.remove();
+    }, 15000);
+  }
+  setInterval(createLeaf, 800);
+</script>
+</body>
+</html>
+
